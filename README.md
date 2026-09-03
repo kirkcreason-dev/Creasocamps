@@ -37,7 +37,7 @@ At the registrar where `creasocamps.com` is managed (the DNS records screen):
    185.199.111.153
    ```
 
-3. Add a `CNAME` record for `www` pointing at `YOUR-GITHUB-USERNAME.github.io` (replace with the account that owns the repository).
+3. Add a `CNAME` record for `www` pointing at `kirkcreason-dev.github.io`.
 4. In Google Sites, open the old site → Settings → Custom domains and remove `creasocamps.com`, so the two hosts stop competing for it.
 
 DNS changes usually take 10–60 minutes to settle. If GitHub's *Custom domain* box shows a DNS check error, wait and press *Check again*.
@@ -46,10 +46,10 @@ DNS changes usually take 10–60 minutes to settle. If GitHub's *Custom domain* 
 
 Everything is plain HTML in `index.html`, grouped by section with a comment header (`<!-- HERO -->`, `<!-- SERVICES -->`, …).
 
-- **Contact details** appear in the hero, the mobile menu, the Contact section, and the footer — search the file for `816-971-4160` to find every spot.
+- **Contact details** (office address and hours) appear in the mobile menu, the Contact section, and the footer — search the file for `3401 Quebec` to find every spot. The phone number and the owner's email are deliberately not on the page.
 - **Videos** live in the `<div class="vgrid">` block. Each tile is one line: `data-id` is the YouTube video id (the part after `v=` in the video's URL) and `data-title` is the caption. Add, remove, or reorder lines freely.
 - **Donate link** is the Stripe payment link. It appears in the nav, the Foundation section, and the footer — search for `buy.stripe.com`.
 - **Services** are the three panels under `<!-- SERVICES -->`; each `<li>` is one service.
 - **Photos**: drop images into `assets/` and reference them with `<img src="assets/your-photo.jpg" alt="...">`. Keep them under ~400 KB each for fast loading.
 
-The contact form opens the visitor's email app with a pre-filled message (no server needed). Messages about the foundation or volunteering go to `creasocares@creasocamps.com`; everything else to `kirkcreason@creasocamps.com`.
+The contact form opens the visitor's email app with a pre-filled message (no server needed). Foundation and volunteering messages are addressed to the Creaso Cares inbox; everything else goes to the office inbox, which is assembled in the script at click time rather than written out on the page.
